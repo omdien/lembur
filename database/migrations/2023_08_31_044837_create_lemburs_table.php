@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('lemburs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('sup_id');
-            $table->foreignId('user_id');
+            $table->foreignId('supel_id');
             $table->text("lem_maksud");
             $table->text("lem_tujuan");
             $table->date("lem_waktu");

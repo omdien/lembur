@@ -15,9 +15,4 @@ class Lembur extends Model
     {
         return $this->belongsTo(Supel::class);
     }
-
-    public function User()
-    {
-        return $this->belongsTo(User::class);
-    }
 }

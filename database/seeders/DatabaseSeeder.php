@@ -6,6 +6,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Supel;
+use App\Models\Lembur;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -43,10 +45,33 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Supel::create([
+            'user_id' => 1,
             'sup_nomor' => 'B.614/SKIPM.MER/KP.440/IV/2023',
+            'sup_keterangan' => '1.	Untuk melakukan  Lembur  Kegiatan Administrasi Keuangan, Pelaporan Kinerja dan kegiatan IT di Lingkup Stasiun Karantina Ikan Pengendalian Mutu dan Keamanan Hasil Perikanan Merak bulan April 2023'
+        ]);
+
+        Supel::create([
+            'user_id' => 1,
+            'sup_nomor' => 'B.614/SKIPM.MER/KP.440/V/2023',
             'sup_keterangan' => '1.	Untuk melakukan  Lembur  Kegiatan Administrasi Keuangan, Pelaporan Kinerja dan kegiatan IT di Lingkup Stasiun Karantina Ikan Pengendalian Mutu dan Keamanan Hasil Perikanan Merak bulan Mei 2023'
         ]);
 
+        Lembur::create([
+            'supel_id' => 1,
+            'lem_maksud' => 'maksudnya',
+            'lem_tujuan' => 'tujuannnya',
+            'lem_waktu' => Carbon::parse('2023-07-02'),
+            'lem_tempat' => 'kantor',
+            'lem_hasil' => 'hasilnya'
+        ]);
 
+        Lembur::create([
+            'supel_id' => 1,
+            'lem_maksud' => 'maksudnya2',
+            'lem_tujuan' => 'tujuannnya2',
+            'lem_waktu' => Carbon::parse('2023-07-02'),
+            'lem_tempat' => 'kantor2',
+            'lem_hasil' => 'hasilnya2'
+        ]);
     }
 }

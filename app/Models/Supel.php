@@ -15,4 +15,9 @@ class Supel extends Model
     {
         return $this->hasMany(Lembur::class);
     }
+
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

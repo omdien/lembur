@@ -24,9 +24,9 @@ class User extends Authenticatable
         'nip',
     ];
 
-    public function Lembur()
+    public function Supel()
     {
-        return $this->hasMany(Lembur::class);
+        return $this->hasMany(Supel::class);
     }
 
     /**
