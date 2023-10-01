@@ -5,16 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Supel;
 use Illuminate\Http\Request;
 
-class DashboardSupelController extends Controller
+class DesktopSupelController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('about', [
-            'supel' => Supel::all()
-        ]);
+        //
     }
 
     /**

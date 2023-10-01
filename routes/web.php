@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardSupelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 Route::view('/home', 'home')->name('home');
-Route::view('/about', 'about')->name('about');
+// Route::view('/about', 'about')->name('about');
+// Route::resource('/about', DashboardSupelController::class)->middleware('auth');
+// Route::resource([
+//     'about' => DashboardSupelController::class,
+// ]);
+
+Route::resource('/about', DashboardSupelController::class)->names([
+    'index' => 'about'
+]);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

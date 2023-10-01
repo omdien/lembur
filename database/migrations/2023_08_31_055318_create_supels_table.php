@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('User_id');
             $table->string("sup_nomor");
+            $table->timestamp("sup_tanggal");
             $table->string("sup_keterangan");
         });
     }
