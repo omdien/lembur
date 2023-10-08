@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardSupelController;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +29,12 @@ Route::view('/home', 'home')->name('home');
 // ]);
 
 Route::resource('/about', DashboardSupelController::class)->names([
-    'index' => 'about'
+    'index' => 'about',
+    'show' => 'about.lihat'
 ]);
+
+// Route::resource('/about', DashboardSupelController::class)->middleware('auth');
+// Route::get('/about/checkSlug', [DashboardSupelController::class, 'show'])->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -41,4 +46,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('pdf', [PdfController::class, 'index']);
 require __DIR__ . '/auth.php';

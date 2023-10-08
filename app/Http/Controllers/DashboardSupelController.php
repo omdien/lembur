@@ -36,9 +36,30 @@ class DashboardSupelController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Supel $supel)
+    public function show($id)
     {
-        //
+        $bulan = array(
+            1 =>   'Januari',
+            'Februari',
+            'Maret',
+            'April',
+            'Mei',
+            'Juni',
+            'Juli',
+            'Agustus',
+            'September',
+            'Oktober',
+            'November',
+            'Desember'
+        );
+
+        $temp = Supel::find($id);
+        $tgl_surat = date("d", strtotime($temp->sup_tanggal)) . ' ' . $bulan[intval(date("m", strtotime($temp->sup_tanggal)))] . ' ' . date("Y", strtotime($temp->sup_tanggal));
+
+        return view('detilspl', [
+            'supel' => $temp,
+            'tg_surat' => $tgl_surat
+        ]);
     }
 
     /**

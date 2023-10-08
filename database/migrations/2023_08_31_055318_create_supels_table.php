@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('supels', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('User_id');
+            $table->foreignId('user_id');
             $table->string("sup_nomor");
-            $table->timestamp("sup_tanggal");
+            $table->timestamp("sup_tanggal")->nullable()->default(null);
             $table->string("sup_keterangan");
         });
     }

@@ -34,12 +34,13 @@
                                     @foreach ($supel as $supol)
                                     <tr
                                     class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                                    <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $no}}</td>
-                                    <td class="whitespace-nowrap px-6 py-4">{{ $supol->sup_nomor}}</td>
-                                    <td class="whitespace-nowrap px-6 py-4">{{ date("d/m/Y", $supol->sup_tanggal)}}</td>
+                                    <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $no }}</td>
+                                    <td class="whitespace-nowrap px-6 py-4">{{ $supol->sup_nomor }}</td>
+                                    {{-- <td class="whitespace-nowrap px-6 py-4">{{ $supol->sup_tanggal->format('d/m/Y') }}</td> --}}
+                                    <td class="whitespace-nowrap px-6 py-4">{{ date("d/m/Y", strtotime($supol->sup_tanggal)) }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ substr($supol->sup_keterangan,0,50) }} ...</td>
                                     <td class="p-3 ">
-                                        <a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
+                                        <a href={{ route('about.lihat',$supol->id) }} class="text-gray-400 hover:text-gray-100 mr-2">
                                             <i class="material-icons-outlined text-base">visibility</i>
                                         </a>
                                         <a href="#" class="text-gray-400 hover:text-gray-100  mx-2">
