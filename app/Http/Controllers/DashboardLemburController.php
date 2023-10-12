@@ -12,7 +12,9 @@ class DashboardLemburController extends Controller
      */
     public function index()
     {
-        //
+        return view('lembur', [
+            'lembur' => Lembur::all()
+        ]);
     }
 
     /**
@@ -34,9 +36,14 @@ class DashboardLemburController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Lembur $lembur)
+    public function show($id)
     {
-        //
+        $temp = Lembur::find($id);
+        // $tgl_surat = date("d", strtotime($temp->sup_tanggal)) . ' ' . $bulan[intval(date("m", strtotime($temp->sup_tanggal)))] . ' ' . date("Y", strtotime($temp->sup_tanggal));
+
+        return view('detilslembur', [
+            'lembur' => $temp
+        ]);
     }
 
     /**

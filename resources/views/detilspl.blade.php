@@ -40,12 +40,12 @@
                             <div class="flex gap-4">
                                 <div class="basis-20">Pangkat</div> 
                                 <div>:</div> 
-                                <div class="flex-auto">{{ $supel->User->nip }}</div>
+                                <div class="flex-auto">{{ $supel->User->pangkat }}</div>
                             </div>
                             <div class="flex gap-4">
                                 <div class="basis-20">Jabatan</div> 
                                 <div>:</div> 
-                                <div class="flex-auto">{{ $supel->User->nip }}</div>
+                                <div class="flex-auto">{{ $supel->User->jabatan }}</div>
                             </div>
                         </div>
                     </div>

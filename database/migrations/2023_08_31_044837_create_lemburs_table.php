@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('supel_id');
+            $table->timestamp('lem_tanggal')->nullable()->default(null);;
             $table->text("lem_maksud");
             $table->text("lem_tujuan");
             $table->date("lem_waktu");

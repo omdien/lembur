@@ -27,21 +27,27 @@ class DatabaseSeeder extends Seeder
             'name' => 'Didin Handiman',
             'email' => 'omdien@gmail.com',
             'password' => bcrypt('4rfv5tgb'),
-            'nip' => '197502102009121001'
+            'nip' => '197502102009121001',
+            'pangkat' => 'Pengatur Tingkat I/IId',
+            'jabatan' => 'Pranata Komputer Pelaksana'
         ]);
 
         User::create([
             'name' => 'Khaerun Naheru',
             'email' => 'khaerun.naheru@kkp.go.id',
             'password' => bcrypt('123456'),
-            'nip' => '198701242003121001'
+            'nip' => '198701242003121001',
+            'pangkat' => 'Pengatur Tingkat I/IId',
+            'jabatan' => 'PHPI Pelaksana'
         ]);
 
         User::create([
             'name' => 'Imaduddin',
             'email' => 'imaduddin72@kkp.go.id',
             'password' => bcrypt('123456'),
-            'nip' => '197201242003121001'
+            'nip' => '197201242003121001',
+            'pangkat' => 'Penata Muda Tingkat I/IIIb',
+            'jabatan' => 'Kepla Urusan Umum'
         ]);
 
         Supel::create([
@@ -60,6 +66,7 @@ class DatabaseSeeder extends Seeder
 
         Lembur::create([
             'supel_id' => 1,
+            'lem_tanggal' => Carbon::parse('2023/07/02'),
             'lem_maksud' => 'maksudnya',
             'lem_tujuan' => 'tujuannnya',
             'lem_waktu' => Carbon::parse('2023-07-02'),
@@ -69,6 +76,7 @@ class DatabaseSeeder extends Seeder
 
         Lembur::create([
             'supel_id' => 1,
+            'lem_tanggal' => Carbon::parse('2023/07/02'),
             'lem_maksud' => 'maksudnya2',
             'lem_tujuan' => 'tujuannnya2',
             'lem_waktu' => Carbon::parse('2023-07-02'),

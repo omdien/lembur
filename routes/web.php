@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardSupelController;
+use App\Http\Controllers\DashboardLemburController;
 use App\Http\Controllers\PdfController;
 
 /*
@@ -32,6 +33,12 @@ Route::resource('/about', DashboardSupelController::class)->names([
     'index' => 'about',
     'show' => 'about.lihat'
 ]);
+
+Route::resource('/lembur', DashboardLemburController::class)->names([
+    'index' => 'lembur',
+    'show' => 'lembur.lihat'
+]);
+
 
 // Route::resource('/about', DashboardSupelController::class)->middleware('auth');
 // Route::get('/about/checkSlug', [DashboardSupelController::class, 'show'])->middleware('auth');
