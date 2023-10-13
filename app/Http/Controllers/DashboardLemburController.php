@@ -22,7 +22,7 @@ class DashboardLemburController extends Controller
      */
     public function create()
     {
-        //
+        return view('tambahlembur');
     }
 
     /**

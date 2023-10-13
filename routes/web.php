@@ -36,7 +36,8 @@ Route::resource('/about', DashboardSupelController::class)->names([
 
 Route::resource('/lembur', DashboardLemburController::class)->names([
     'index' => 'lembur',
-    'show' => 'lembur.lihat'
+    'show' => 'lembur.lihat',
+    'create' => 'lembur.tambah'
 ]);
 
 
